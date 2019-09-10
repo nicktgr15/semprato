@@ -16,7 +16,7 @@ class CategoryAdmin(MPTTModelAdmin):
     inlines = [ArticleInline]
 
 
-API_KEY = "AIzaSyCnyIBkxzS_ZiqhH304f8BQO1fzgakzaxY"
+API_KEY = "<your-google-maps-api-key>"
 
 
 class ArticleAdmin(ModelAdmin):
