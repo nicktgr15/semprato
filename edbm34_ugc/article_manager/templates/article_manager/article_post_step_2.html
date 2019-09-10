@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <form action="{% url 'article_manager:post_article_step_2' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.title.html_name }}">{{ form.title.label_tag }}</label>
+            <input type="text" class="form-control" id="{{ form.title.html_name }}" name="{{ form.title.html_name }}"
+                   placeholder="Enter Title" value="{{ title }}">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.text.html_name }}">{{ form.text.label_tag }}</label>
+            <textarea id="{{ form.text.html_name }}" name="{{ form.text.html_name }}" class="form-control" rows="3">{{ text }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.category.html_name }}">{{ form.category.label_tag }}</label>
+            {{ form.category }}
+            (The category is extracted automatically from content, adjust manually if required)
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+
+{% endblock %}

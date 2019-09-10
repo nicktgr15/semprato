@@ -1,0 +1,6 @@
+Hello {{ user }},
+
+Welcome to EDBM34-UGC. Please follow the following link to activate your account:
+{{ scheme }}://{{ site }}/accounts/activate/{{ activation_key }}
+
+Thank you

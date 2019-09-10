@@ -1,0 +1,24 @@
+<dl id="comments">
+    <div style="margin-bottom: 15px"><h4 style="display:inline">Comments</h4> <span style="color:#999">({{ comment_list|length }})</span></div>
+    <div class="panel panel-default" style="padding:15px; background-color:#eee">
+    {% for comment in comment_list %}
+            <div class="panel-body" style="padding:0px;margin-bottom:15px;">
+                {% if comment.is_removed %}
+                        <strong>{{ comment.name }}</strong> | <span style="color:#999">{{ comment.submit_date }} </span>
+                    <div style="margin-top:0px;">
+                        This comment has been removed by the site staff
+                    </div>
+                {% else %}
+                    <strong>{{ comment.name }}</strong> | <span style="color:#999">{{ comment.submit_date }} </span>
+                    <div style="margin-top:0px;">
+                        {{ comment.comment }}
+                    </div>
+                {% endif %}
+
+
+            </div>
+    {% endfor %}
+    </div>
+</dl>
+
+

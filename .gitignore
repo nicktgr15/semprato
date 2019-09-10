@@ -1,0 +1,9 @@
+env
+.idea
+*.log
+db.sqlite3
+*.pyc
+venv
+edbm34_ugc/media/images/*jpg
+edbm34_ugc/media/images/*.png
+nlp_experiments/dataset

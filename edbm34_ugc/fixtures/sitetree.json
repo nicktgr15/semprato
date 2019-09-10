@@ -1,0 +1,154 @@
+[
+  {
+    "model": "sitetree.tree",
+    "pk": 2,
+    "fields": {
+      "title": "maintree",
+      "alias": "maintree"
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 2,
+    "fields": {
+      "title": "Home",
+      "hint": "",
+      "url": "article_manager:home",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 2,
+      "access_permissions": []
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 4,
+    "fields": {
+      "title": "Business",
+      "hint": "",
+      "url": "article_manager:category \"business\"",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 4,
+      "access_permissions": []
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 5,
+    "fields": {
+      "title": "Entertainment",
+      "hint": "",
+      "url": "article_manager:category \"entertainment\"",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 5,
+      "access_permissions": []
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 6,
+    "fields": {
+      "title": "Politics",
+      "hint": "",
+      "url": "article_manager:category \"politics\"",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 6,
+      "access_permissions": []
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 7,
+    "fields": {
+      "title": "Sport",
+      "hint": "",
+      "url": "article_manager:category \"sport\"",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 7,
+      "access_permissions": []
+    }
+  },
+  {
+    "model": "sitetree.treeitem",
+    "pk": 8,
+    "fields": {
+      "title": "Tech",
+      "hint": "",
+      "url": "article_manager:category \"tech\"",
+      "urlaspattern": true,
+      "tree": 2,
+      "hidden": false,
+      "alias": null,
+      "description": "",
+      "inmenu": true,
+      "inbreadcrumbs": true,
+      "insitetree": true,
+      "access_loggedin": false,
+      "access_guest": false,
+      "access_restricted": false,
+      "access_perm_type": 1,
+      "parent": null,
+      "sort_order": 8,
+      "access_permissions": []
+    }
+  }
+]

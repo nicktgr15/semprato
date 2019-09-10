@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block content %}
+
+    <h3>{{ article.title }}</h3>
+
+    <span class="label label-success" style="vertical-align: middle;">{{ article.category }}</span>
+    <span style="color:#777;font-weight: bold; vertical-align: middle;">{{ article.created_at }}</span>
+    <span style="color:#555;font-weight: bold; vertical-align: middle;">{{ article.author }}</span>
+
+    <div>
+        {% for tag in article.tags.all %}
+        <span class="label label-info" style="vertical-align: middle;">{{ tag.name }}</span>
+        {% endfor %}
+    </div>
+
+    <p style="margin-top:3px;">{{ article.text|safe }}</p>
+
+    <form action="{% url 'article_manager:post_like_article' category_slug=article.category.slug article_id=article.pk %}" method="POST">
+        {% csrf_token %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <strong>Likes</strong> <span class="badge"> {{ article.likes.all|length }}</span>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Like
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+    <p></p>
+
+    <div>
+        {% render_comment_list for article %}
+    </div>
+
+    {% if user.is_authenticated %}
+
+        {% get_comment_form for article as form %}
+
+        <form action="{% comment_form_target %}" method="POST">
+
+            {% csrf_token %}
+
+            {{ form.honeypot }}
+            {{ form.content_type }}
+            {{ form.object_pk }}
+            {{ form.timestamp }}
+            {{ form.security_hash }}
+
+            <div class="form-group">
+                <label for="commenttextarea">Add your comment</label>
+                <textarea id="commenttextarea" name="{{ form.comment.name }}" class="form-control" rows="3"></textarea>
+            </div>
+
+            <button type="submit" id="id_submit" class="btn btn-default">Add comment</button>
+            <input type="hidden" name="next" value="{% url 'article_manager:article' article.category.slug article.id %}"/>
+        </form>
+
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">log in</a> to leave a comment.</p>
+    {% endif %}
+
+    <br/>
+{% endblock %}

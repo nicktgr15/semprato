@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <form action="{% url 'article_manager:post_article' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.title.html_name }}">{{ form.title.label_tag }}</label>
+            <input required ype="text" class="form-control" id="{{ form.title.html_name }}" name="{{ form.title.html_name }}" placeholder="Enter Title">
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.category.html_name }}">{{ form.category.label_tag }}</label>
+            {{ form.category }}
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label for="{{ form.category.html_name }}">{{ form.category.label_tag }}</label>-->
+            <!--<select name="{{ form.category.html_name }}" id="{{ form.category.html_name }}">-->
+                <!--{% for x,y in form.fields.category.choices %}-->
+                <!--<option value="{{ x }}">{{ y }}</option>-->
+                <!--{% endfor %}-->
+            <!--</select>-->
+        <!--</div>-->
+
+
+        <div class="form-group">
+            <label for="tags">Tags </label>
+            <input data-role="tagsinput" type="text" class="form-control" id="tags" name="tags" placeholder="Enter tags">
+            comma separated list of tags
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.text.html_name }}">{{ form.text.label_tag }}</label>
+            <textarea required id="{{ form.text.html_name }}" name="{{ form.text.html_name }}" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.image1.html_name }}">{{ form.image1.label_tag }}</label>
+            <input type="file" id="{{ form.image1.html_name }}" name="{{ form.image1.html_name }}">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.image2.html_name }}">{{ form.image2.label_tag }}</label>
+            <input type="file" id="{{ form.image2.html_name }}" name="{{ form.image2.html_name }}">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.image3.html_name }}">{{ form.image3.label_tag }}</label>
+            <input type="file" id="{{ form.image3.html_name }}" name="{{ form.image3.html_name }}">
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+
+{% endblock %}

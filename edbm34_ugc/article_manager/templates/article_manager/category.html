@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load comments %}
+
+{% block content %}
+
+    {% for article in all_articles %}
+        <div>
+
+        <h3>{{ article.title }}</h3>
+            <span class="label label-success" style="vertical-align: middle;">{{ article.category }}</span>
+            <span style="color:#777;font-weight: bold; vertical-align: middle;">{{ article.created_at }}</span>
+
+            <div>
+                {% for tag in article.tags.all %}
+                <span class="label label-info" style="vertical-align: middle;">{{ tag.name }}</span>
+                {% endfor %}
+            </div>
+
+            <p style="margin-top:3px;">{{ article.text|safe|slice:"0:500" }}...</p>
+            {% get_comment_count for article as comment_count %}
+            <a href="{% url 'article_manager:article' category.slug article.id %}" class="btn btn-default btn-sm" role="button">Read More</a>
+            &nbsp;&nbsp;Comments <span class="badge"> {{ comment_count }}</span>
+            &nbsp;&nbsp;Likes <span class="badge"> {{ article.likes.all|length }}</span>
+        </div>
+
+{#                <a href="{% url 'article_manager:article' category.slug article.id %}">{{ article.title }}</a></td>#}
+{#        <td>{{ article.created_at }}</td>#}
+    {% endfor %}
+
+
+{% endblock %}

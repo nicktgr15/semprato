@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="p-header">
+        <h2>Register</h2>
+    </div>
+
+    <form  method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.username.html_name }}">{{ form.username.label_tag }}</label>
+            <input type="text" class="form-control" id="{{ form.username.html_name }}" name="{{ form.username.html_name }}" placeholder="Enter Username">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.email.html_name }}">{{ form.email.label_tag }}</label>
+            <input type="email" class="form-control" id="{{ form.email.html_name }}" name="{{ form.email.html_name }}" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.password1.html_name }}">{{ form.password1.label_tag }}</label>
+            <input type="password" class="form-control" id="{{ form.password1.html_name }}" name="{{ form.password1.html_name }}" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="{{ form.password2.html_name }}">{{ form.password2.label_tag }}</label>
+            <input type="password" class="form-control" id="{{ form.password2.html_name }}" name="{{ form.password2.html_name }}" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        {{ form.errors }}
+    </div>
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if request.user.is_anonymous %}
+    <a class="btn btn-success btn-xs" href="{% url 'login' %}">Login</a>
+    or
+    <a class="btn btn-success btn-xs" href="{% url 'django_registration_register' %}">Register</a>
+{% else %}
+    Welcome {{ request.user }} &nbsp;
+    <a class="btn btn-default btn-xs" href="{% url 'logout' %}">Logout</a>
+{%  endif %}
