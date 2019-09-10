@@ -7,3 +7,5 @@ Semantic Participatory Journalism Platform
 - create a python3 virtual env
 - pip install requirements.txt
 - run `./bootstrap.sh` 
+
+![alt text](https://raw.githubusercontent.com/nicktgr15/semprato/master/semprato.png)
