@@ -4,7 +4,7 @@ from django.utils.html import format_html
 from mptt.admin import MPTTModelAdmin
 
 from article_manager.models import Category, Article, BlockedTerm, ArticleTag
-
+import os
 
 class ArticleInline(StackedInline):
     model = Article
@@ -16,8 +16,7 @@ class CategoryAdmin(MPTTModelAdmin):
     inlines = [ArticleInline]
 
 
-API_KEY = "<your-google-maps-api-key>"
-
+API_KEY = os.getenv('API_KEY')
 
 class ArticleAdmin(ModelAdmin):
     list_filter = ['category']
